@@ -13,7 +13,7 @@ btns = []
 btn_labels = [tkinter.StringVar() for i in range(9)]
 
 def b_clicked(btn):
-    sym = board.click_check(btn.get(), btn_labels.index(btn))
+    sym = board.click_check(btn_labels.index(btn))
     if sym == '':
         for i in btn_labels:
                     i.set('')

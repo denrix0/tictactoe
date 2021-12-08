@@ -14,6 +14,13 @@ class Board:
     def set_board_box(self, sym, pos):
         self.board[pos] = sym
 
+    def get_gameinfo(self):
+        return {
+            'board': self.board,
+            'turn': self.turn,
+            'status': self.bottom_text
+        }
+
     def win_check(self):
         b = self.board
         for sym in self.turns:
@@ -33,8 +40,8 @@ class Board:
                 return sym
         return False
     
-    def click_check(self, sym_val, sym_pos):
-        btn_sym = sym_val
+    def click_check(self, sym_pos):
+        btn_sym = self.board[sym_pos]
 
         if (not self.game_end):
             if (btn_sym not in self.turns):
