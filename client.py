@@ -1,5 +1,6 @@
 import socket
 import json
+import sys
 
 class Client:
     def __init__(self) -> None:
@@ -9,7 +10,7 @@ class Client:
             ['', '', '']
         ]
         self.soc = socket.socket()
-        host = 'localhost'
+        host = sys.argv[1] if sys.argv[1] else 'localhost'
         port = 5555
         print('Waiting for connection response')
         try:

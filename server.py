@@ -1,9 +1,8 @@
 import socket
-import os
 from _thread import *
 from board import Board
 import json
-import random
+import sys
 
 class GameSever:
     def __init__(self) -> None:
@@ -12,7 +11,7 @@ class GameSever:
 
     def main(self):
         soc = socket.socket()
-        host = "localhost"
+        host = sys.argv[1] if sys.argv[1] else 'localhost'
         port = 5555
 
         self.thread_count = 0
