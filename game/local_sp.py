@@ -1,5 +1,5 @@
 import tkinter
-from board import Board
+from game.board import Board
 
 tk = tkinter.Tk()
 

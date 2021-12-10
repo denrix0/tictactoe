@@ -1,6 +1,6 @@
 import socket
 from _thread import *
-from board import Board
+from game.board import Board
 import json
 import sys
 
