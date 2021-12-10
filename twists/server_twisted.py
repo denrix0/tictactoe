@@ -1,4 +1,7 @@
-from tic_tac_toe.game.board import Board
+import os, sys
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+
+from game.board import Board
 
 from twisted.internet import reactor
 from twisted.internet.protocol import Protocol
