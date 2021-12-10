@@ -11,7 +11,7 @@ class GameSever:
 
     def main(self):
         soc = socket.socket()
-        host = sys.argv[1] if sys.argv[1] else 'localhost'
+        host = sys.argv[1] if len(sys.argv)>1 else 'localhost'
         port = 5555
 
         self.thread_count = 0

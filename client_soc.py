@@ -10,7 +10,7 @@ class Client:
             ['', '', '']
         ]
         self.soc = socket.socket()
-        host = sys.argv[1] if sys.argv[1] else 'localhost'
+        host = sys.argv[1] if len(sys.argv)>1 else 'localhost'
         port = 5555
         print('Waiting for connection response')
         try:
@@ -25,7 +25,6 @@ class Client:
     def periodic_update(self):
         self.soc.send('hi'.encode())
         res = self.soc.recv(1024).decode('utf-8')
-        print(res)
         try:
             res = json.loads(res)
             return res
@@ -57,7 +56,7 @@ def p_update():
         for i in range(9):
             btn_labels[i].set(sym['board'][i])
         txt.set(sym['status'])
-    tk.after(1000, p_update)
+    tk.after(50, p_update)
 
 row = 0
 col = 0
